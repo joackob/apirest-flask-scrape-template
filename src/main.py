@@ -9,6 +9,11 @@ def index():
     return 'hello world'
 
 
+@app.route('/clarin')
+def index():
+    return 'hello clarin'
+
+
 if __name__ == '__main__':
     mode_dev = len(argv) == 2 and argv[1] == 'dev'
     app.run(debug=mode_dev)
