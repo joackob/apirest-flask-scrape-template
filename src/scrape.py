@@ -10,3 +10,15 @@ def scrape_clarin() -> list[str]:
     titulos = [articulo.find(name='h2') for articulo in articulos]
     titulos = [titulo.text for titulo in titulos]
     return titulos
+
+
+def scrape_infobae() -> list[str]:
+    url_infobae = 'https://www.infobae.com/'
+    infobae_html = get(url=url_infobae)
+    infobae_web = BeautifulSoup(
+        markup=infobae_html.text,
+        features='html.parser')
+    titulos = infobae_web.find_all(name='h2')
+    titulos: list[str] = [titulo.text for titulo in titulos]
+    titulos = [titulo for titulo in titulos if not titulo.isupper()]
+    return titulos
