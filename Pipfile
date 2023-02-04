@@ -8,6 +8,8 @@ dev = "python ./src/main.py dev"
 
 [packages]
 flask = "*"
+requests = "*"
+bs4 = "*"
 
 [dev-packages]
 

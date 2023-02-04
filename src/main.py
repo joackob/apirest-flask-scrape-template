@@ -1,5 +1,6 @@
 from flask import Flask
 from sys import argv
+from scrape import scrape_clarin
 
 app = Flask(import_name=__name__)
 
@@ -10,8 +11,8 @@ def index():
 
 
 @app.route('/clarin')
-def index():
-    return 'hello clarin'
+def clarin():
+    return scrape_clarin()
 
 
 if __name__ == '__main__':
