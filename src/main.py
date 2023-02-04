@@ -1,6 +1,7 @@
 from flask import Flask
 from sys import argv
-from scrape import scrape_clarin, scrape_infobae
+from scrape import scrape_clarin, scrape_infobae, scrape_clarin_with
+from flask import request
 
 app = Flask(import_name=__name__)
 
@@ -12,7 +13,11 @@ def index():
 
 @app.route('/clarin')
 def clarin():
-    return scrape_clarin()
+    params = request.args
+    if 'query' in params:
+        return scrape_clarin_with(query=params.get('query'))
+    else:
+        return scrape_clarin()
 
 
 @app.route('/infobae')

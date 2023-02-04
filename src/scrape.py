@@ -12,6 +12,12 @@ def scrape_clarin() -> list[str]:
     return titulos
 
 
+def scrape_clarin_with(query: str) -> list[str]:
+    titulos = scrape_clarin()
+    titulos = [titulo for titulo in titulos if query in titulo]
+    return titulos
+
+
 def scrape_infobae() -> list[str]:
     url_infobae = 'https://www.infobae.com/'
     infobae_html = get(url=url_infobae)
