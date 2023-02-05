@@ -1,28 +1,28 @@
 from flask import Flask
 from sys import argv
-from scrape import scrape_clarin, scrape_infobae, scrape_clarin_with
+from scrape import scrape_news, scrape_news_by
 from flask import request
+from flask import abort
 
 app = Flask(import_name=__name__)
 
 
 @app.route('/')
 def index():
-    return 'hello world'
+    try:
+        return scrape_news()
+    except:
+        abort(502)
 
 
-@app.route('/clarin')
-def clarin():
-    params = request.args
-    if 'query' in params:
-        return scrape_clarin_with(query=params.get('query'))
-    else:
-        return scrape_clarin()
-
-
-@app.route('/infobae')
-def infobae():
-    return scrape_infobae()
+@app.route('/filterby')
+def filterby():
+    try:
+        query = request.args
+        query = query.get('query')
+        return scrape_news_by(query)
+    except:
+        abort(502)
 
 
 if __name__ == '__main__':
