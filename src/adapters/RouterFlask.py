@@ -24,11 +24,11 @@ class RouterFlask(Router, Flask):
         self.add_url_rule(rule='/', view_func=index)
 
     def defineRouteFilter(self, action: Callable[[str], list[str]]) -> None:
-        def filterByQuery():
+        def filter():
             try:
                 query = request.args.get('query')
                 return action(query)
             except:
                 abort(502)
 
-        self.add_url_rule(rule='/filterby', view_func=filterByQuery)
+        self.add_url_rule(rule='/filterby', view_func=filter)
