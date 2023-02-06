@@ -8,7 +8,11 @@ class Router:
         raise NotImplementedError
 
     @abstractmethod
-    def defineRoute(self, route: str, fun: Callable[[], list[str]]) -> None:
+    def defineRouteIndex(self, action: Callable[[], list[str]]) -> None:
+        raise NotImplementedError
+
+    @abstractmethod
+    def defineRouteFilter(self, action: Callable[[str], list[str]]) -> None:
         raise NotImplementedError
 
 

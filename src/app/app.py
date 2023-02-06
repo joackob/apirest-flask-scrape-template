@@ -8,8 +8,8 @@ class App:
     router: Router
 
     def run(self, debugmode: bool = False) -> None:
-        self.router.defineRoute(route='/', fun=self.getNews)
-        self.router.defineRoute(route='/filterby', fun=self.getNewsByQuery)
+        self.router.defineRouteIndex(action=self.getNews)
+        self.router.defineRouteFilter(action=self.getNewsByQuery)
         self.router.run(debugmode=debugmode)
         pass
 

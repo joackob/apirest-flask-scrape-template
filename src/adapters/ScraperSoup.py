@@ -10,7 +10,7 @@ class Soup(BeautifulSoup):
         pass
 
 
-class ScrapeNews(Scraper):
+class ScraperSoup(Scraper):
     def getNews(self) -> list[str]:
         return self.scrape_clarin() + self.scrape_infobae()
 
