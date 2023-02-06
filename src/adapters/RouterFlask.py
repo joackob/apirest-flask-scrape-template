@@ -15,13 +15,18 @@ class RouterFlask(Router, Flask):
         Flask.run(self, debug=debugmode)
 
     def defineRouteIndex(self, action: Callable[[], list[str]]) -> None:
-        self.add_url_rule(rule='/', view_func=action)
+        def index():
+            try:
+                return action()
+            except:
+                abort(502)
+
+        self.add_url_rule(rule='/', view_func=index)
 
     def defineRouteFilter(self, action: Callable[[str], list[str]]) -> None:
         def filterByQuery():
             try:
-                args = request.args()
-                query = args.get('query')
+                query = request.args.get('query')
                 return action(query)
             except:
                 abort(502)
