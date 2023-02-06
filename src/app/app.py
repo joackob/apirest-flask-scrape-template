@@ -1,4 +1,4 @@
-from interfaces import Scraper, Router
+from app.interfaces import Scraper, Router
 from dataclasses import dataclass
 
 

@@ -1,6 +1,6 @@
 from requests import get
 from bs4 import BeautifulSoup
-from interfaces import Scraper
+from app.interfaces import Scraper
 
 
 class Soup(BeautifulSoup):
