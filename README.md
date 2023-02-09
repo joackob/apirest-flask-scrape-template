@@ -21,4 +21,9 @@ Por último, instalar o actualizar `pipenv` como gestor de dependencias para est
 - 🛠Para instalar las dependencias ejecutar el siguiente comando `pipenv install`
 - ⚒Para ejecutar el modo playground o repl, ejecutar el siguiente comando `pipenv run dev`
 
+## Routes
+
+- `/` : Devuelve en forma de arreglo, todas las noticias obtenidas de clarín e infobae
+- `/filterby?query=`: Devuelve en forma de arreglo, todas las noticias obtenidas de clarín e infobae que coincidan o contengan a las palabras sugeridas en `query`. Ejemplo: ‘`/filterby?query=sismo`’ devolverá todas las noticias que contengan la palabra *sismo* en ellas.
+
  
