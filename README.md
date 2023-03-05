@@ -23,7 +23,5 @@ Por último, instalar o actualizar `pipenv` como gestor de dependencias para est
 
 ## Routes
 
-- `/` : Devuelve en forma de arreglo, todas las noticias obtenidas de clarín e infobae
-- `/filterby?query=`: Devuelve en forma de arreglo, todas las noticias obtenidas de clarín e infobae que coincidan o contengan a las palabras sugeridas en `query`. Ejemplo: ‘`/filterby?query=sismo`’ devolverá todas las noticias que contengan la palabra *sismo* en ellas.
-
- 
+- `/api/v1/news` : Devuelve en forma de arreglo, todas las noticias obtenidas de clarín e infobae
+- `/api/v1/news?words=`: Devuelve en forma de arreglo, todas las noticias obtenidas de clarín e infobae que coincidan o contengan a las palabras sugeridas en `query`. Ejemplo: ‘`/api/v1/news?words=sismo`’ devolverá todas las noticias que contengan la palabra _sismo_ en ellas.
