@@ -1,6 +1,6 @@
 from requests import get
 from bs4 import BeautifulSoup
-from app.interfaces import Scraper
+from interfaces.interfaces import Scraper
 
 
 class Soup(BeautifulSoup):
@@ -11,7 +11,10 @@ class Soup(BeautifulSoup):
 
 
 class ScraperSoup(Scraper):
-    def getNews(self) -> list[str]:
+    def run(self) -> None:
+        pass
+
+    def get_news(self) -> list[str]:
         return self.scrape_clarin() + self.scrape_infobae()
 
     def scrape_clarin(self) -> list[str]:

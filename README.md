@@ -18,7 +18,10 @@ Por último, instalar o actualizar `pipenv` como gestor de dependencias para est
 
 ## Instalación y ejecución
 
-- 🛠Para instalar las dependencias ejecutar el siguiente comando `pipenv install`
-- ⚒Para ejecutar el modo playground o repl, ejecutar el siguiente comando `pipenv run dev`
+- 🛠Para instalar las dependencias ejecutar el siguiente comando `pipenv install` o `pip install -r requirements.txt`
+- ⚒Para ejecutar el modo playground o repl, ejecutar el siguiente comando `pipenv run start`
 
- 
+## Rutas
+
+- `/api/v1/news` : Devuelve en forma de arreglo, todas las noticias obtenidas de Clarín e Infobae
+- `/api/v1/news?words=`: Devuelve en forma de arreglo, todas las noticias obtenidas de Clarín e Infobae que coincidan o contengan a las palabras sugeridas en `words`. Ejemplo: ‘`/api/v1/news?words=sismo`’ devolverá todas las noticias que contengan la palabra *sismo* en ellas.
